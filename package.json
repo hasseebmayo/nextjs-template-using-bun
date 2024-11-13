@@ -4,10 +4,11 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "next build",
+    "build": "next build && next-sitemap",
     "start": "next start",
     "lint": "next lint",
-    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore"
+    "format": "next lint --fix && prettier '**/*.{json,yaml}' --write --ignore-path .gitignore",
+      "sitemap": "next-sitemap"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -44,6 +45,7 @@
     "input-otp": "^1.4.1",
     "lucide-react": "^0.456.0",
     "next": "15.0.3",
+    "next-sitemap": "^4.2.3",
     "react": "19.0.0-rc-66855b96-20241106",
     "react-day-picker": "8.10.1",
     "react-dom": "19.0.0-rc-66855b96-20241106",
