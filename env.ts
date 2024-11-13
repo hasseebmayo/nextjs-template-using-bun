@@ -8,7 +8,7 @@ export const env = createEnv({
   * Will throw if you access these variables on the client.
   */
  server: {
-  NEXT_PUBLIC_APP_URL: z.string(),
+  //   NEXT_PUBLIC_APP_URL: z.string(),
   // OPEN_AI_API_KEY: z.string().min(1),
  },
  /*
@@ -18,6 +18,7 @@ export const env = createEnv({
   */
  client: {
   // NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY: z.string().min(1),
+  NEXT_PUBLIC_APP_URL: z.string().min(1),
  },
  /*
   * Due to how Next.js bundles environment variables on Edge and Client,

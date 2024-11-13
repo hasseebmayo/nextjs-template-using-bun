@@ -14,6 +14,7 @@ import {
 
 import { cn } from '@/lib/utils';
 import { Label } from '@/components/ui/label';
+import { ShieldAlert } from 'lucide-react';
 
 const Form = FormProvider;
 
@@ -33,11 +34,13 @@ const FormField = <
  TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
 >({
  ...props
-}: ControllerProps<TFieldValues, TName>) => (
- <FormFieldContext.Provider value={{ name: props.name }}>
-  <Controller {...props} />
- </FormFieldContext.Provider>
-);
+}: ControllerProps<TFieldValues, TName>) => {
+ return (
+  <FormFieldContext.Provider value={{ name: props.name }}>
+   <Controller {...props} />
+  </FormFieldContext.Provider>
+ );
+};
 
 const useFormField = () => {
  const fieldContext = React.useContext(FormFieldContext);
@@ -153,10 +156,12 @@ const FormMessage = React.forwardRef<
   <p
    ref={ref}
    id={formMessageId}
-   className={cn('text-sm font-medium text-destructive', className)}
+   className={cn('text-xs font-medium text-destructive', className)}
    {...props}
   >
-   {body}
+   <ShieldAlert className="mr-1 size-4" />
+
+   <span>{body}</span>
   </p>
  );
 });
